@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { GerarPromoção } from "../../Components/GerarPromoção";
+import { GerarPromoção } from "../../Componentes/GerarPromoção";
 
 
-export const Home = () => {
+export const Inicio = () => {
 
     const [products, setProducts] = useState([
         { id: 1, name: "Smart TV LED 50", price: 1999.0 },
@@ -13,10 +13,15 @@ export const Home = () => {
         { id: 6, name: "Cadeira Gamer Cruiser Preta FORTREK", price: 1215.16 },
     ]);
 
+    const [promocaoGerada, setPromocaoGerada] = useState([])
+    // console.log(promocaoGerada)
+
+
+
     return (
         <>
             <h1>Home</h1>
-            <GerarPromoção />
+            <GerarPromoção setPromocaoGerada={setPromocaoGerada} products={products} />
         </>
     )
 }
